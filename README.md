@@ -1,2 +1,3 @@
 # Fireloc
-A data pipeline for Forest Fire Prediction
+Intelligent system for tracking and
+monitoring of forest fires
