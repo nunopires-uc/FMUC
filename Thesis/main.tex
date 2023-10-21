@@ -37,51 +37,77 @@ Repositório\\
 \end{itemize}
 
 \section{O que foi feito}
-\subsection{Semana 23/10/23}
-\begin{enumerate}
-\item Fuel moisture is a measure of the amount of water in a fuel (vegetation) available to a fire; O artigo X, cita o fator de fuel moisture como um o principal parâmetro de ignição de fogo florestal. 
-\item and like this.
-\end{enumerate}
-\dots or bullet points \dots
-\begin{itemize}
-\item Like this,
-\item and like this.
-\end{itemize}
+\subsection{Semana 23/10/23 - Resumo}
+Os fatores que contribuem para o inicio de um incêndio florestal são:  \textbf{Topografia} (Elevação, Inclinação), \textbf{Tipo de Vegetação} (existem tipos de vegetação que são mais suscetíveis ao fogo), \textbf{Meteorologia}, \textbf{Fatores Humanos}, \textbf{Distância a estradas}, \textbf{Distâncias a povoações}. 
+
+
+As variáveis de previsão dividem-se nas categorias: \textbf{fatores meteorológicos}, \textbf{fatores temporais}, \textbf{fatores populacionais}, \textbf{fatores paisagísticos}, \textbf{fatores de origem humana} \ref{sec:main_forest_fire_indicators}.
+
+
+A previsão dos fogos florestais, além dos métodos de machine learning, podem ser previstos através de modelos matemáticos como o \textbf{FWI}.
+
+
+A incidência de chuva não tem uma \textbf{correlação} muito forte com as outras variáveis meteorológicas.
+
+
+A auditoria dos fogos florestais pode ser feita através do uso de ferramentas \textbf{GIS}, onde se usa vários mapas, e temas para analisar o estado do terreno, solo, vegetação e árvores. Este tipo de análise pode ser útil numa fase inicial de auditoria, e previsão das condições que culminam no inicio de um incêndio.
+
+
 \subsection{Questões 23/10/23}
+
+\subsubsection{Repartição de Informação}
+O meu pensamento inicial foi atribuir a cada ocorrência de incêndio, a temperatura, e os dados geográficos correspondentes, ver exemplo \href{https://drive.google.com/file/d/13fw-uWtUAH4MEGPvmtnrrzJ5M7Pa4_cf/view?usp=sharing}{dataset 2015} e \href{https://drive.google.com/file/d/14O13kv_9zqOzVZgREm5C9k1rYZwEg72l/view?usp=sharing}{dataset 2017}.
+
+
+Isto iria criar um dataset muito desbalanceado, onde teremos localidades com muito mais ocorrências que outras, o que é bom para fins estatísticos, mas não a nível de encontrar as variáveis que contêm o cerne para que aconteca a ignição de um fogo florestal.
+Cada localidade pode-se encaixar num tipo de terreno, onde cada terreno partilha características comuns como é demonstrado na figura \ref{fig:tipos_de_terreno}.
+
+
+Assim, era possível criar métodos, e matrizes de correlação para prever a eficácia das variáveis independentes.
+
+
+Na figura \ref{fig:db_schema}, e na tabela \ref{tabela:exemplo_dataset}, está demonstrado de forma muito simplificada como seria o schema da base de dados.
+
+
+A minha questão, é se esta linha pensamento é acertiva, estarmos a utilizar o tipo de terreno com as suas características (inclinação, vegetação, espécies de árvores) em vez da localidade.
+
+
+
+\subsubsection{Outras questões}
 \begin{enumerate}
-\item Deveria escrever em Português ou Inglês
-\item colocar tabela do dataset, e mostrar o cross section que quero fazer, uma demonstração do dataset unbalanced.
-\item Colocar foto do dataset;
-\item escrever conclusões sobre os artigos
-\item Fuel moisture is a measure of the amount of water in a fuel (vegetation) available to a fire; O artigo X, cita o fator de fuel moisture como um o principal parâmetro de ignição de fogo florestal. 
-\item Vai existir uma transformação de ex. Distrito: Faro, Concelho: Silves para o tipo de terreno correspondente. Local A -> Características do terreno.
-Características de terreno -> Inclinação, Vegetação, Especies de arvores.
-
-
-\begin{center}
-\begin{table}[]
-\begin{tabular}{|l|l|l|l|l|l|l|}
-\hline
-\cellcolor[HTML]{FFCCC9}Codigo & \cellcolor[HTML]{FFCE93}dia & \cellcolor[HTML]{FFFC9E}mês & \cellcolor[HTML]{9AFF99}hora & \cellcolor[HTML]{96FFFB}estação & \cellcolor[HTML]{ECF4FF}tipo\_de\_terreno & \cellcolor[HTML]{CBCEFB}dados meteorológicos \\ \hline
-A                              & 12                          &                             &                              &                                 &                                           &                                              \\ \hline
-B                              & 16                          &                             &                              &                                 &                                           &                                              \\ \hline
-C                              & 17                          &                             &                              &                                 &                                           &                                              \\ \hline
-\end{tabular}
-\end{table}
-\end{center}
-
-\item and like this.
+    \item Deveria escrever em Português ou Inglês?
 \end{enumerate}
-\dots or bullet points \dots
-\begin{itemize}
-\item Like this,
-\item and like this.
-\end{itemize}
+
+
+\begin{figure}[H]
+ \centering
+  \includegraphics[width=1.0\linewidth]{imgs/tipo_de_terreno.png}
+   \caption{\label{fig:tipos_de_terreno}Tipos de Terrenos}
+\end{figure}
+
+\begin{figure}[H]
+ \centering
+  \includegraphics[width=1.0\linewidth]{imgs/db_schema.png}
+   \caption{\label{fig:db_schema}Mockup schema relacional snippet base de dados}
+\end{figure}
+
+\begin{table}[H]
+\label{}
+\begin{tabular}{|l|l|l|l|}
+\hline
+\cellcolor[HTML]{FFCCC9}Codigo & \cellcolor[HTML]{ECF4FF}hora,dia,mes & \cellcolor[HTML]{FFCE93}tipo de terreno & \cellcolor[HTML]{CBCEFB}dados meteorológicos \\ \hline
+1                              & 12/10/2020 15:31 outono              & A                                       & 37ºC                                         \\ \hline
+2                              & 03/07/2020 13:21 verão               & C                                       & 41ºC                                         \\ \hline
+3                              & 22/08/2020 10:15 verão               & A                                       & 32ºC                                         \\ \hline
+\end{tabular}
+\caption{\label{tabela:exemplo_dataset}Snippet exemplo tabela base de dados}
+\end{table}
 
 \section{Mapping Forest Fire Risk—A Case Study in
 Galicia (Spain) \cite{Novo2020MappingFF}}
+\label{sec:Mapping Forest Fire Risk—A Case Study in Galicia}
 
-\subsection{Fatores que Contribuem para o ínicio de um incêndio, e propagação}
+\subsection{Fatores que Contribuem para o ínicio de um incêndio e propagação}
 \begin{enumerate}
 \item topografia (elevação, e inclinação)
 \item vegetação
@@ -118,6 +144,7 @@ Atividades humanas estão associadas com a ocorrência de fogo florestal, e a pr
 
 \section{To Predict the Fire Outbreak in Australia using 
 Historical Database \cite{9964603}}
+\label{sec:To Predict the Fire Outbreak in Australia using Historical Database}
 Neste artigo, é usado uma abordagem de Árvores de Decisão para construir o modelo de previsão. Os datasets utilizados são da NASA'S FIRMS (Fire Information for Resource Management System) satellite data, da NASA MODIS e VIIRS dataset, e contém dados de incêndios dos últimos 20 anos.\par
 O fogo florestal produz poluição de partículas finas de ar que impacta directamente a saúde humana, mesmo com pouca exposição.\par
 Os prados e florestas são susceptíveis ao fogo do que
@@ -128,6 +155,7 @@ Zonas tropicais contém o maior número de ocorrências de incêndio, existindo 
 
 \section{Environmental Fire Hazard Detection and 
 Prediction using Random Forest Algorithm \cite{9726029}}
+\label{sec:Environmental Fire Hazard Detection and Prediction using Random Forest Algorithm}
 Este artigo utiliza dados dos incêndios do parque natural de Montesinho em Trás-os-Montes guardados ao longo de três anos.
 A previsão meteorológica é usada para prever condições climáticas favoráveis ao acontecimento de fogos florestais.
 
@@ -178,6 +206,7 @@ is 0.6664, and the Random forest regression score is 0.9799.
 
 
 \section{Forest Fire Probability Prediction based on Humidity and Temperature \cite{10085661}}
+\label{sec:Forest Fire Probability Prediction based on Humidity and Temperature}
 Este artigo focava na humidade, oxigénio, e temperatura para a previsão. Foi criada uma aplicação onde se inseria estes três valores, e o depois, mostrado a probabilidade de ocorrer um incêndio.   
 \subsection{Methodology - Passos para a previsão}
 \begin{enumerate}
@@ -208,6 +237,7 @@ algorithm for the prediction of forest fire probability.
 
 \section{Optimization of Geographic Information Systems 
 for Forest Fire Risk Assessment \cite{9167162}}
+\label{sec:Optimization of Geographic Information Systems for Forest Fire Risk Assessment}
 The performed geographic information systems optimization enables easier and faster forecasting of critical points that could be threatened by fire
 \begin{enumerate}
     \item Creating thematic layers - represent land use, population density, vegetation types, elevation, etc.
@@ -221,9 +251,10 @@ spread;
 
 \section{A smart approach for fire prediction under uncertain
 conditions using machine learning \cite{Sharma2020}}
+
 Estudo realizado num dataset que continha 517 instâncias e 13 atributos, mas apenas 2 atributos, temperatura e humidade relativa foram considerados.
 
-\begin{figure}[ht]
+\begin{figure}[H]
  \centering
   \includegraphics[width=0.80\linewidth]{imgs/tabela_resultados_previsão.png}
    \caption{\label{fig:model_comparison}Comparação entre os 8 modelos}
@@ -234,7 +265,7 @@ O AUC demonstra o a efetividade de um modelo para distinguir entre casos corresp
 
 \section{Role of Machine Learning Algorithms in Forest Fire 
 Management: A Literature Review \cite{arif2021role}}
-
+\label{sec:Role of Machine Learning Algorithms in Forest Fire Management: A Literature Review}
 \subsection{Áreas de Pesquisa Relacionadas com fogos Florestais}
 \begin{itemize}
     \item Prediction of Fire Occurrence (time and location)
@@ -251,6 +282,7 @@ Management: A Literature Review \cite{arif2021role}}
 \end{figure}
 
 \subsection{Fatores principais da ignição de fogos florestais}
+\label{sec:main_forest_fire_indicators}
 \subsubsection{Fatores Meteorológicos}
 \begin{itemize}
     \item Temperatura
