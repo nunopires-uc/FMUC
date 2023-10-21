@@ -12,27 +12,64 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{float}
+\usepackage[table,xcdraw]{xcolor}
 
-\title{Your Paper}
+\title{Desenvolvimento de sistema inteligente para localização e monitorização de incêndios florestais}
 \author{Nuno Pires}
 
 \begin{document}
 \maketitle
 
-\begin{abstract}
-Your abstract.
-\end{abstract}
+\begin{center}
+Repositório\\
+\url{https://github.com/nunopires-uc/Fireloc}
+\end{center}
+
 
 \section{Data Sources}
 \begin{itemize}
     \item Variety of Portugal GIS datasets from the Linking Landscape, Environment, Agriculture and Food - Green and Blue Infrastructures", Instituto Superior de Agronomia and other sources. Shapefiles or geoTiff in EPSG:3763, ETRS89/Portugal TM06, metadata in xml format, layout and a map preview. \url{http://epic-webgis-portugal.isa.ulisboa.pt/data#relevo}
     \item Geocatalogo - Catálogo com informação geográfica de dados abertos (opendata) disponível para descarregar em diversos formatos \url{https://geocatalogo.icnf.pt/catalogo_tema2.html}
-    \item \url{https://github.com/centraldedados/incendios/tree/master}
+    \item Informações sobre Incêndios até 2015 \url{https://github.com/centraldedados/incendios/tree/master}
+    \item \url{https://prociv.gov.pt/pt/avisos-legais/acesso-a-informacao/}
+    \item \url{https://effis.jrc.ec.europa.eu/applications}
 \end{itemize}
 
-\section{Questões}
+\section{O que foi feito}
+\subsection{Semana 23/10/23}
 \begin{enumerate}
 \item Fuel moisture is a measure of the amount of water in a fuel (vegetation) available to a fire; O artigo X, cita o fator de fuel moisture como um o principal parâmetro de ignição de fogo florestal. 
+\item and like this.
+\end{enumerate}
+\dots or bullet points \dots
+\begin{itemize}
+\item Like this,
+\item and like this.
+\end{itemize}
+\subsection{Questões 23/10/23}
+\begin{enumerate}
+\item Deveria escrever em Português ou Inglês
+\item colocar tabela do dataset, e mostrar o cross section que quero fazer, uma demonstração do dataset unbalanced.
+\item Colocar foto do dataset;
+\item escrever conclusões sobre os artigos
+\item Fuel moisture is a measure of the amount of water in a fuel (vegetation) available to a fire; O artigo X, cita o fator de fuel moisture como um o principal parâmetro de ignição de fogo florestal. 
+\item Vai existir uma transformação de ex. Distrito: Faro, Concelho: Silves para o tipo de terreno correspondente. Local A -> Características do terreno.
+Características de terreno -> Inclinação, Vegetação, Especies de arvores.
+
+
+\begin{center}
+\begin{table}[]
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\cellcolor[HTML]{FFCCC9}Codigo & \cellcolor[HTML]{FFCE93}dia & \cellcolor[HTML]{FFFC9E}mês & \cellcolor[HTML]{9AFF99}hora & \cellcolor[HTML]{96FFFB}estação & \cellcolor[HTML]{ECF4FF}tipo\_de\_terreno & \cellcolor[HTML]{CBCEFB}dados meteorológicos \\ \hline
+A                              & 12                          &                             &                              &                                 &                                           &                                              \\ \hline
+B                              & 16                          &                             &                              &                                 &                                           &                                              \\ \hline
+C                              & 17                          &                             &                              &                                 &                                           &                                              \\ \hline
+\end{tabular}
+\end{table}
+\end{center}
+
 \item and like this.
 \end{enumerate}
 \dots or bullet points \dots
@@ -57,7 +94,7 @@ Galicia (Spain) \cite{Novo2020MappingFF}}
 \subsection{Tipos de Risco}
 \begin{enumerate}
 \item Risco a longo prazo: define-se pelas componentes de um território que não variam a longo prazo como a topografia, e o tipo de vegetação.
-\item Risco a curto prazo: definese pelo for fatores que mudam, como as condições do clima.
+\item Risco a curto prazo: define-se por fatores que mudam, como as condições do clima.
 \end{enumerate}
 Risco de Incêncido define-se como a probabilidade de de ocorrência de um fogo florestal, e o dano, que potencialmente, pode vir a causar num lugar(Vulnerabilidade).
 Três categorias de controlo de incêndio: Predição, monitoramento, e predição.
@@ -81,73 +118,59 @@ Atividades humanas estão associadas com a ocorrência de fogo florestal, e a pr
 
 \section{To Predict the Fire Outbreak in Australia using 
 Historical Database \cite{9964603}}
-A Machine Learning based Decision Tree
-Model to construct a Forest Fire Prediction Model using data
-from the last 20 years from NASA'S FIRMS (Fire Information for Resource Management System) satellite data, on NASA MODIS and VIIRS dataset.
-Wildfires produce fine particle air pollution, which directly
-threatens human health even during relatively short
-exposures.
-Extreme fire occurrences had accounted for 25% of all
-fire incidents with the Northern Territory experiencing the
-maximum number of fire incidents. It was noted that
-Grasslands and Forests were more susceptible to fire than
-other types of vegetation.
-Tropical zones had the maximum number of fire
-occurrences in a week (967), an almost periodic seasonal
-frequency pattern. Grasslands had the highest weekly
-frequency (1067).
+Neste artigo, é usado uma abordagem de Árvores de Decisão para construir o modelo de previsão. Os datasets utilizados são da NASA'S FIRMS (Fire Information for Resource Management System) satellite data, da NASA MODIS e VIIRS dataset, e contém dados de incêndios dos últimos 20 anos.\par
+O fogo florestal produz poluição de partículas finas de ar que impacta directamente a saúde humana, mesmo com pouca exposição.\par
+Os prados e florestas são susceptíveis ao fogo do que
+outros tipos de vegetação.\par
+Zonas tropicais contém o maior número de ocorrências de incêndio, existindo um padrão de frequência sazonal.
 
 
-Forest fire data from the Montesinho 
-natural park in Portugal’s Tras-os-Montes upper east zone, 
-collected over three years
-
-Weather forecasting is used to 
-predict the favorable climatic conditions for forest fires to 
-take measures accordingly for that particular day
 
 \section{Environmental Fire Hazard Detection and 
 Prediction using Random Forest Algorithm \cite{9726029}}
-X x-axis spatial coordinate within the Montesinho park map: 1 to 9
-Y y-axis spatial coordinate within the Montesinho park map: 2 to 9
-Month Month of the year: ‘Jan’ to ‘Dec’
-Day Day of the week: ‘Mon’ to ‘Sun’
-FFMC Fine Fuel Moisture Code (FFMC) index from the Fire Weather 
-Index (FWI) system: 18.7 to 96.20
-DMC Duff Moisture Code (DMC) index from the FWI system: 1.1 to 
-291.3
-DC Drought Code (DC) index from the FWI system: 7.9 to 860.6
-ISI Initial Spread Index (ISI) index from the FWI system: 0.0 to 
-56.10
-Temp Temperature in Celsius degrees: 2.2 to 33.30
-RH Relative humidity in %: 15.0 to 100
-Wind Wind speed in km/h: 0.40 to 9.40
-Rain Outside rain in mm/m2 : 0.0 to 6.4
-Area Burned area of the forest (in ha): 0.00 to 1090.84
+Este artigo utiliza dados dos incêndios do parque natural de Montesinho em Trás-os-Montes guardados ao longo de três anos.
+A previsão meteorológica é usada para prever condições climáticas favoráveis ao acontecimento de fogos florestais.
 
-\begin{figure}[ht]
+\subsection{Parâmetros do Dataset}
+\begin{enumerate}
+    \item X x-axis spatial coordinate within the Montesinho park map: 1 to 9
+    \item Y y-axis spatial coordinate within the Montesinho park map: 2 to 9
+    \item Month Month of the year: ‘Jan’ to ‘Dec’
+    \item Day Day of the week: ‘Mon’ to ‘Sun’
+    \item FFMC Fine Fuel Moisture Code (FFMC)
+    \item Fire Weather Index (FWI) system: 18.7 to 96.20
+    \item DMC Duff Moisture Code (DMC) index from the FWI system: 1.1 to 291.3
+    \item DC Drought Code (DC) index from the FWI system: 7.9 to 860.6
+    \item ISI Initial Spread Index (ISI) index from the FWI system: 0.0 to 56.10
+    \item Temp Temperature in Celsius degrees: 2.2 to 33.30
+    \item RH Relative humidity in %: 15.0 to 100
+    \item Wind Wind speed in km/h: 0.40 to 9.40
+    \item Rain Outside rain in mm/m2 : 0.0 to 6.4
+    \item Area Burned area of the forest (in ha): 0.00 to 1090.84
+\end{enumerate}
+
+
+\begin{figure}[H]
  \centering
   \includegraphics[width=0.25\linewidth]{imgs/flow_chart_detect_fire.png}
-   \caption{\label{fig:flow_chaft}This frog was uploaded via the file-tree menu.}
+   \caption{\label{fig:flow_chaft}Pipeline desde o dataset à predição}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[H]
  \centering
   \includegraphics[width=0.70\linewidth]{imgs/fwi_structure.png}
-   \caption{\label{fig:fwi_structure}This frog was uploaded via the file-tree menu.}
+   \caption{\label{fig:fwi_structure}Atributos meteorológicos, relações, e códigos}
 \end{figure}
 
 
-
-1. Temperature is directly related or proportional to 
-month, FFMC, DMC, DC, and ISI. 
-2. Rain and temperature show the absence of a 
-correlation between them. 
-3. Rain and FFMC also show the absence of a 
-correlation between them. 
-4. DC and month have a strong relationship. 
-
-A chuva não tem uma correlação muito forte com as outras variáveis.
+\subsection{Conclusões}
+\begin{enumerate}
+    \item A temperatura é diretamente proporcional ao mês, FFMC, DMC, DC, e ISI;
+    \item Chuva e temperatura demonstram uma ausência de correlação;
+    \item Chuva e FFMC demonstram uma ausência de correlação;
+    \item Existe uma forte relação entre DC e o mês;
+    \item A chuva não tem uma correlação muito forte com as outras variáveis.
+\end{enumerate}
 
 The Random Forest regression means the absolute error 
 is 0.6664, and the Random forest regression score is 0.9799.
@@ -203,144 +226,83 @@ Estudo realizado num dataset que continha 517 instâncias e 13 atributos, mas ap
 \begin{figure}[ht]
  \centering
   \includegraphics[width=0.80\linewidth]{imgs/tabela_resultados_previsão.png}
-   \caption{\label{fig:flow_chaft}Comparação entre os 8 modelos}
+   \caption{\label{fig:model_comparison}Comparação entre os 8 modelos}
 \end{figure}
 
 O AUC demonstra o a efetividade de um modelo para distinguir entre casos correspondentes a fogo, e a casos sem fogo. Quanto maior o AUC, melhor é o modelo a fazer a distinção.
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\subsection{How to create Sections and Subsections}
-
-Simply use the section and subsection commands, as in this example document! With Overleaf, all the formatting and numbering is handled automatically according to the template you've chosen. If you're using the Visual Editor, you can also create new section and subsections via the buttons in the editor toolbar.
-
-\subsection{How to include Figures}
-
-First you have to upload the image file from your computer using the upload link in the file-tree menu. Then use the includegraphics command to include it in your document. Use the figure environment and the caption command to add a number and a caption to your figure. See the code for Figure \ref{fig:frog} in this section for an example.
-
-Note that your figure will automatically be placed in the most appropriate place for it, given the surrounding text and taking into account other figures or tables that may be close by. You can find out more about adding images to your documents in this help article on \href{https://www.overleaf.com/learn/how-to/Including_images_on_Overleaf}{including images on Overleaf}.
-
-\begin{figure}
-\centering
-\includegraphics[width=0.25\linewidth]{frog.jpg}
-\caption{\label{fig:frog}This frog was uploaded via the file-tree menu.}
+\section{Role of Machine Learning Algorithms in Forest Fire 
+Management: A Literature Review \cite{arif2021role}}
+
+\subsection{Áreas de Pesquisa Relacionadas com fogos Florestais}
+\begin{itemize}
+    \item Prediction of Fire Occurrence (time and location)
+    \item Detection of already started fire event
+    \item Prediction of Spread of Wildfire (burned area in future)
+    \item Detection of Burned Area due to fire
+\end{itemize}
+
+\subsection{Pipeline desde a recolha de dados à aplicação do modelo}
+\begin{figure}[ht]
+ \centering
+  \includegraphics[width=0.80\linewidth]{imgs/pipelina_data_ml.png}
+   \caption{\label{fig:pipeline_modelo}Pipeline modelo}
 \end{figure}
 
-\subsection{How to add Tables}
+\subsection{Fatores principais da ignição de fogos florestais}
+\subsubsection{Fatores Meteorológicos}
+\begin{itemize}
+    \item Temperatura
+    \item Humidade relativa
+    \item Precipitação
+    \item Velocidade do Vento
+    \item Trovoada
+\end{itemize}
 
-Use the table and tabular environments for basic tables --- see Table~\ref{tab:widgets}, for example. For more information, please see this help article on \href{https://www.overleaf.com/learn/latex/tables}{tables}. 
+\subsubsection{Fatores Temporais}
+\begin{itemize}
+    \item Estação
+    \item Mês
+    \item Hora do dia
+\end{itemize}
 
-\begin{table}
-\centering
-\begin{tabular}{l|r}
-Item & Quantity \\\hline
-Widgets & 42 \\
-Gadgets & 13
-\end{tabular}
-\caption{\label{tab:widgets}An example table.}
-\end{table}
+\subsubsection{Fatores Populacionais}
+\begin{itemize}
+    \item Densidade populacional
+    \item Atividades humanas na floresta
+    \item Comportamentos humanos
+\end{itemize}
 
-\subsection{How to add Comments and Track Changes}
+\subsubsection{Fatores Populacionais}
+\begin{itemize}
+    \item Densidade populacional
+    \item Atividades humanas na floresta
+    \item Comportamentos humanos
+\end{itemize}
 
-Comments can be added to your project by highlighting some text and clicking ``Add comment'' in the top right of the editor pane. To view existing comments, click on the Review menu in the toolbar above. To reply to a comment, click on the Reply button in the lower right corner of the comment. You can close the Review pane by clicking its name on the toolbar when you're done reviewing for the time being.
+\subsubsection{Fatores paisagísticos}
+\begin{itemize}
+    \item Tipos de árvores
+    \item Declive
+    \item Distãncia de terrenos agrícolas
+\end{itemize}
 
-Track changes are available on all our \href{https://www.overleaf.com/user/subscription/plans}{premium plans}, and can be toggled on or off using the option at the top of the Review pane. Track changes allow you to keep track of every change made to the document, along with the person making the change. 
+\subsubsection{Fatores de origem humana}
+\begin{itemize}
+    \item Curtos-circuitos nas linhas da rede elétrica que atravessam a floresta
+\end{itemize}
 
-\subsection{How to add Lists}
+\subsection{Prever a probabilidade de Fogo com base em modelos matemáticos}
+\begin{itemize}
+    \item Fire Weather Index (FWI)
+    \item Angstrom index
+    \item KBDI index
+    \item Nesterov index
+    \item Baumgartner index
+\end{itemize}
+A utilização de modelos de regressões logísticas pode ser usado para estimar os fogos causados por humanos.
 
-You can make lists with automatic numbering \dots
-
-
-
-\subsection{How to write Mathematics}
-
-\LaTeX{} is great at typesetting mathematics. Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically distributed random variables with $\text{E}[X_i] = \mu$ and $\text{Var}[X_i] = \sigma^2 < \infty$, and let
-\[S_n = \frac{X_1 + X_2 + \cdots + X_n}{n}
-      = \frac{1}{n}\sum_{i}^{n} X_i\]
-denote their mean. Then as $n$ approaches infinity, the random variables $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $\mathcal{N}(0, \sigma^2)$.
-
-
-\subsection{How to change the margins and paper size}
-
-Usually the template you're using will have the page margins and paper size set correctly for that use-case. For example, if you're using a journal article template provided by the journal publisher, that template will be formatted according to their requirements. In these cases, it's best not to alter the margins directly.
-
-If however you're using a more general template, such as this one, and would like to alter the margins, a common way to do so is via the geometry package. You can find the geometry package loaded in the preamble at the top of this example file, and if you'd like to learn more about how to adjust the settings, please visit this help article on \href{https://www.overleaf.com/learn/latex/page_size_and_margins}{page size and margins}.
-
-\subsection{How to change the document language and spell check settings}
-
-Overleaf supports many different languages, including multiple different languages within one document. 
-
-To configure the document language, simply edit the option provided to the babel package in the preamble at the top of this example project. To learn more about the different options, please visit this help article on \href{https://www.overleaf.com/learn/latex/International_language_support}{international language support}.
-
-To change the spell check language, simply open the Overleaf menu at the top left of the editor window, scroll down to the spell check setting, and adjust accordingly.
-
-\subsection{How to add Citations and a References List}
-
-You can simply upload a \verb|.bib| file containing your BibTeX entries, created with a tool such as JabRef. You can then cite entries from it, like this: \cite{greenwade93}. Just remember to specify a bibliography style, as well as the filename of the \verb|.bib|. You can find a \href{https://www.overleaf.com/help/97-how-to-include-a-bibliography-using-bibtex}{video tutorial here} to learn more about BibTeX.
-
-If you have an \href{https://www.overleaf.com/user/subscription/plans}{upgraded account}, you can also import your Mendeley or Zotero library directly as a \verb|.bib| file, via the upload menu in the file-tree.
-
-\subsection{Good luck!}
-
-We hope you find Overleaf useful, and do take a look at our \href{https://www.overleaf.com/learn}{help library} for more tutorials and user guides! Please also let us know if you have any feedback using the Contact Us link at the bottom of the Overleaf menu --- or use the contact form at \url{https://www.overleaf.com/contact}.
 
 \bibliographystyle{plain}
 \bibliography{referencias}
