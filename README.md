@@ -49,3 +49,7 @@ monitoring of forest fires
 <br>
 
 
+## Doc Ext
+https://www.evidentlyai.com/classification-metrics/accuracy-precision-recall
+
+
