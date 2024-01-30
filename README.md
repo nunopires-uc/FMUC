@@ -53,6 +53,7 @@ monitoring of forest fires
 https://www.evidentlyai.com/classification-metrics/accuracy-precision-recall
 https://www.kaggle.com/datasets/selfishgene/historical-hourly-weather-data?select=temperature.csv
 https://www.kaggle.com/datasets/rtatman/188-million-us-wildfires
+https://www.visualcrossing.com/
 
 
 
